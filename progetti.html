@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progetti - Denca Costruzioni</title>
+    <meta name="description" content="Scopri i progetti realizzati da Denca: impianti fotovoltaici, infissi, edilizia residenziale e industriale, impermeabilizzazioni. Portfolio di oltre 500 lavori completati.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/progetti.css">
+    <script src="./js/common.js"></script>
+    <script src="./js/progetti.js"></script>
+</head>
+<body>
+    <!-- ==========================================================================
+         HEADER & NAVIGATION
+         ========================================================================== -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">DENCA</a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="servizi.html">Servizi</a></li>
+                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                    <li><a href="progetti.html" class="active">Progetti</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+            
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         PAGE HEADER
+         ========================================================================== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>I Nostri Progetti</h1>
+            <p>Scopri i lavori che abbiamo realizzato negli ultimi anni: impianti fotovoltaici, costruzioni, ristrutturazioni e molto altro. Ogni progetto racconta la nostra passione per la qualità.</p>
+            
+            <div class="stats-summary">
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Progetti Completati</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Anni di Esperienza</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Clienti Soddisfatti</span>
+                </div>
+            </div>
+            
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &gt; Progetti
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         FILTERS SECTION
+         ========================================================================== -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i> Tutti i Progetti
+                </button>
+                <button class="filter-btn" data-filter="fotovoltaico">
+                    <i class="fas fa-solar-panel"></i> Fotovoltaico
+                </button>
+                <button class="filter-btn" data-filter="infissi">
+                    <i class="fas fa-window-maximize"></i> Infissi
+                </button>
+                <button class="filter-btn" data-filter="edilizia">
+                    <i class="fas fa-building"></i> Edilizia
+                </button>
+                <button class="filter-btn" data-filter="impermeabilizzazioni">
+                    <i class="fas fa-tint-slash"></i> Impermeabilizzazioni
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROJECTS GRID SECTION
+         ========================================================================== -->
+    <section class="projects-section">
+        <div class="container">
+            <div class="projects-grid" id="projectsGrid">
+                
+                <!-- Progetto Fotovoltaico 1 -->
+                <div class="project-card" data-category="fotovoltaico">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-solar-panel"></i>
+                            <p><strong>Impianto Fotovoltaico</strong><br>Residenziale 6kW</p>
+                        </div>
+                        <div class="project-category">Fotovoltaico</div>
+                        <div class="project-overlay">
+                            <a href="#" class="view-project">
+                                <i class="fas fa-eye"></i> Vedi Dettagli
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Villa Residenziale - Impianto 6kW</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i> Cesena (FC)
+                        </div>
+                        <p class="project-description">
+                            Impianto fotovoltaico da 6kW con sistema di accumulo Tesla Powerwall. 
+                            Installazione su tetto a falda con ottimizzatori di potenza per massimizzare la produzione.
+                        </p>
+                        <div class="project-details">
+                            <div class="project-specs">
+                                <div class="project-spec"><strong>Potenza:</strong> 6 kW</div>
+                                <div class="project-spec"><strong>Pannelli:</strong> 20x Sunpower</div>
+                                <div class="project-spec"><strong>Accumulo:</strong> Tesla Powerwall</div>
+                            </div>
+                            <div class="project-year">2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progetto Infissi 1 -->
+                <div class="project-card" data-category="infissi">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-window-maximize"></i>
+                            <p><strong>Infissi in PVC</strong><br>Sostituzione completa</p>
+                        </div>
+                        <div class="project-category">Infissi</div>
+                        <div class="project-overlay">
+                            <a href="#" class="view-project">
+                                <i class="fas fa-eye"></i> Vedi Dettagli
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Appartamento Centro Storico</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i> Forlì (FC)
+                        </div>
+                        <p class="project-description">
+                            Sostituzione completa di 12 finestre e 2 porte-finestre con infissi in PVC 
+                            a taglio termico. Classe energetica migliorata da F a A.
+                        </p>
+                        <div class="project-details">
+                            <div class="project-specs">
+                                <div class="project-spec"><strong>Finestre:</strong> 12 + 2 porte</div>
+                                <div class="project-spec"><strong>Materiale:</strong> PVC taglio termico</div>
+                                <div class="project-spec"><strong>Vetri:</strong> Tripli basso emissivi</div>
+                            </div>
+                            <div class="project-year">2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progetto Edilizia 1 -->
+                <div class="project-card" data-category="edilizia">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-building"></i>
+                            <p><strong>Capannone Industriale</strong><br>Nuova costruzione</p>
+                        </div>
+                        <div class="project-category">Edilizia</div>
+                        <div class="project-overlay">
+                            <a href="#" class="view-project">
+                                <i class="fas fa-eye"></i> Vedi Dettagli
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Capannone Industriale</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i> Zona Industriale Cesena
+                        </div>
+                        <p class="project-description">
+                            Costruzione ex-novo di capannone industriale da 1200 mq con uffici annessi. 
+                            Struttura in cemento armato e acciaio, copertura coibentata.
+                        </p>
+                        <div class="project-details">
+                            <div class="project-specs">
+                                <div class="project-spec"><strong>Superficie:</strong> 1200 mq</div>
+                                <div class="project-spec"><strong>Struttura:</strong> C.A. + Acciaio</div>
+                                <div class="project-spec"><strong>Uffici:</strong> 200 mq</div>
+                            </div>
+                            <div class="project-year">2023</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progetto Impermeabilizzazioni 1 -->
+                <div class="project-card" data-category="impermeabilizzazioni">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-tint-slash"></i>
+                            <p><strong>Terrazzo</strong><br>Impermeabilizzazione</p>
+                        </div>
+                        <div class="project-category">Impermeabilizzazioni</div>
+                        <div class="project-overlay">
+                            <a href="#" class="view-project">
+                                <i class="fas fa-eye"></i> Vedi Dettagli
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Terrazzo Condominiale</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i> Rimini (RN)
+                        </div>
+                        <p class="project-description">
+                            Impermeabilizzazione completa di terrazzo condominiale 150 mq con sistema 
+                            liquido poliuretanico. Garanzia 10 anni contro infiltrazioni.
+                        </p>
+                        <div class="project-details">
+                            <div class="project-specs">
+                                <div class="project-spec"><strong>Superficie:</strong> 150 mq</div>
+                                <div class="project-spec"><strong>Sistema:</strong> Poliuretanico</div>
+                                <div class="project-spec"><strong>Garanzia:</strong> 10 anni</div>
+                            </div>
+                            <div class="project-year">2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progetto Fotovoltaico 2 -->
+                <div class="project-card" data-category="fotovoltaico">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-industry"></i>
+                            <p><strong>Impianto Industriale</strong><br>50kW su capannone</p>
+                        </div>
+                        <div class="project-category">Fotovoltaico</div>
+                        <div class="project-overlay">
+                            <a href="#" class="view-project">
+                                <i class="fas fa-eye"></i> Vedi Dettagli
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Azienda Alimentare - 50kW</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i> Faenza (RA)
+                        </div>
+                        <p class="project-description">
+                            Grande impianto fotovoltaico industriale da 50kW installato su copertura 
+                            capannone. Autoconsumo al 85% con notevole risparmio energetico.
+                        </p>
+                        <div class="project-details">
+                            <div class="project-specs">
+                                <div class="project-spec"><strong>Potenza:</strong> 50 kW</div>
+                                <div class="project-spec"><strong>Pannelli:</strong> 125x Canadian Solar</div>
+                                <div class="project-spec"><strong>Autoconsumo:</strong> 85%</div>
+                            </div>
+                            <div class="project-year">2023</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progetto Edilizia 2 -->
+                <div class="project-card" data-category="edilizia">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-home"></i>
+                            <p><strong>Ristrutturazione</strong><br>Villetta unifamiliare</p>
+                        </div>
+                        <div class="project-category">Edilizia</div>
+                        <div class="project-overlay">
+                            <a href="#" class="view-project">
+                                <i class="fas fa-eye"></i> Vedi Dettagli
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Ristrutturazione Villetta</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i> Bertinoro (FC)
+                        </div>
+                        <p class="project-description">
+                            Ristrutturazione completa di villetta degli anni '70. Efficientamento energetico, 
+                            cappotto termico, nuovo impianto di riscaldamento e fotovoltaico.
+                        </p>
+                        <div class="project-details">
+                            <div class="project-specs">
+                                <div class="project-spec"><strong>Superficie:</strong> 180 mq</div>
+                                <div class="project-spec"><strong>Cappotto:</strong> 12 cm EPS</div>
+                                <div class="project-spec"><strong>Classe:</strong> Da G ad A</div>
+                            </div>
+                            <div class="project-year">2023</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progetto Infissi 2 -->
+                <div class="project-card" data-category="infissi">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-door-open"></i>
+                            <p><strong>Porte Blindate</strong><br>Condominio</p>
+                        </div>
+                        <div class="project-category">Infissi</div>
+                        <div class="project-overlay">
+                            <a href="#" class="view-project">
+                                <i class="fas fa-eye"></i> Vedi Dettagli
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Condominio - Porte Blindate</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i> Cesenatico (FC)
+                        </div>
+                        <p class="project-description">
+                            Fornitura e installazione di 24 porte blindate classe 3 per condominio. 
+                            Personalizzazione estetica e massima sicurezza garantita.
+                        </p>
+                        <div class="project-details">
+                            <div class="project-specs">
+                                <div class="project-spec"><strong>Porte:</strong> 24 unità</div>
+                                <div class="project-spec"><strong>Classe:</strong> Sicurezza 3</div>
+                                <div class="project-spec"><strong>Cilindri:</strong> Europei anti-bump</div>
+                            </div>
+                            <div class="project-year">2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progetto Impermeabilizzazioni 2 -->
+                <div class="project-card" data-category="impermeabilizzazioni">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-warehouse"></i>
+                            <p><strong>Copertura Industriale</strong><br>5000 mq</p>
+                        </div>
+                        <div class="project-category">Impermeabilizzazioni</div>
+                        <div class="project-overlay">
+                            <a href="#" class="view-project">
+                                <i class="fas fa-eye"></i> Vedi Dettagli
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Copertura Industriale</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i> Forlì (FC)
+                        </div>
+                        <p class="project-description">
+                            Impermeabilizzazione di grande copertura industriale 5000 mq con membrane 
+                            bituminose ardesiata. Rifacimento completo e coibentazione.
+                        </p>
+                        <div class="project-details">
+                            <div class="project-specs">
+                                <div class="project-spec"><strong>Superficie:</strong> 5000 mq</div>
+                                <div class="project-spec"><strong>Sistema:</strong> Membrane bituminose</div>
+                                <div class="project-spec"><strong>Coibentazione:</strong> Inclusa</div>
+                            </div>
+                            <div class="project-year">2023</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progetto Fotovoltaico 3 -->
+                <div class="project-card" data-category="fotovoltaico">
+                    <div class="project-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-solar-panel"></i>
+                            <p><strong>Comunità Energetica</strong><br>Impianto condiviso</p>
+                        </div>
+                        <div class="project-category">Fotovoltaico</div>
+                        <div class="project-overlay">
+                            <a href="#" class="view-project">
+                                <i class="fas fa-eye"></i> Vedi Dettagli
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Comunità Energetica</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i> Savignano sul Rubicone (FC)
+                        </div>
+                        <p class="project-description">
+                            Primo progetto di comunità energetica della zona: impianto 100kW condiviso 
+                            tra 15 famiglie con sistema di monitoraggio e ripartizione consumi.
+                        </p>
+                        <div class="project-details">
+                            <div class="project-specs">
+                                <div class="project-spec"><strong>Potenza:</strong> 100 kW</div>
+                                <div class="project-spec"><strong>Famiglie:</strong> 15 partecipanti</div>
+                                <div class="project-spec"><strong>Tipo:</strong> Comunità energetica</div>
+                            </div>
+                            <div class="project-year">2024</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         FEATURED PROJECT SECTION
+         ========================================================================== -->
+    <section class="featured-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Progetto in Evidenza</h2>
+                <p>Il nostro più grande progetto dell'anno: un esempio di eccellenza e innovazione</p>
+            </div>
+            
+            <div class="featured-project">
+                <div class="featured-content">
+                    <h3>Centro Commerciale - Impianto 200kW</h3>
+                    <div class="project-meta">
+                        <span class="meta-item">Fotovoltaico</span>
+                        <span class="meta-item">200 kW</span>
+                        <span class="meta-item">Commerciale</span>
+                        <span class="meta-item">2024</span>
+                    </div>
+                    <p>
+                        Il più grande impianto fotovoltaico commerciale che abbiamo realizzato quest'anno. 
+                        Installazione su copertura centro commerciale con sistema di monitoraggio avanzato 
+                        e ottimizzatori per ogni singolo pannello.
+                    </p>
+                    <ul class="featured-highlights">
+                        <li><i class="fas fa-check"></i> 500 pannelli ad alta efficienza</li>
+                        <li><i class="fas fa-check"></i> Produzione annua: 280.000 kWh</li>
+                        <li><i class="fas fa-check"></i> Risparmio CO2: 140 tonnellate/anno</li>
+                        <li><i class="fas fa-check"></i> ROI: 6 anni con incentivi</li>
+                        <li><i class="fas fa-check"></i> Monitoraggio real-time</li>
+                        <li><i class="fas fa-check"></i> Garanzia estesa 25 anni</li>
+                    </ul>
+                    <a href="#" class="featured-cta">
+                        <i class="fas fa-play"></i> Guarda il Case Study
+                    </a>
+                </div>
+                
+                <div class="featured-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-store"></i>
+                        <p><strong>Centro Commerciale</strong><br>
+                        Impianto 200kW<br>
+                        <em>Foto progetto da inserire</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         TESTIMONIALS SECTION
+         ========================================================================== -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cosa Dicono i Nostri Clienti</h2>
+                <p>Le testimonianze di chi ha scelto Denca per i propri progetti</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Professionali, puntuali e competenti. Il nostro impianto fotovoltaico produce 
+                        esattamente quello che avevano previsto. Consiglio Denca a occhi chiusi!"
+                    </p>
+                    <div class="testimonial-author">Marco Bianchi</div>
+                    <div class="testimonial-project">Impianto Fotovoltaico 6kW - Cesena</div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Ristrutturazione completa della nostra casa anni '70. Ora abbiamo una casa 
+                        in classe A e risparmiamo il 70% sui costi di riscaldamento. Eccezionali!"
+                    </p>
+                    <div class="testimonial-author">Famiglia Rossi</div>
+                    <div class="testimonial-project">Ristrutturazione Completa - Bertinoro</div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Avevo problemi di infiltrazioni da anni. Denca ha risolto tutto con 
+                        l'impermeabilizzazione. Garanzia 10 anni e nessun problema da 2 anni!"
+                    </p>
+                    <div class="testimonial-author">Condominio Miramare</div>
+                    <div class="testimonial-project">Impermeabilizzazione Terrazzo - Rimini</div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CTA SECTION
+         ========================================================================== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Hai un Progetto in Mente?</h2>
+                <p>
+                    Raccontaci la tua idea e trasformiamola insieme in realtà. 
+                    Consulenza gratuita e preventivo personalizzato senza impegno.
+                </p>
+                <div class="cta-buttons">
+                    <a href="contatti.html" class="cta-button cta-primary">
+                        <i class="fas fa-calculator"></i> Richiedi Preventivo
+                    </a>
+                    <a href="servizi.html" class="cta-button cta-secondary">
+                        <i class="fas fa-tools"></i> Scopri i Servizi
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <h3>DENCA</h3>
+                    <p>Costruzioni e ristrutturazioni di qualità dal 2003. Specializzati in impianti fotovoltaici, infissi, edilizia e impermeabilizzazioni.</p>
+                    <p><strong>La tua soddisfazione è la nostra priorità.</strong></p>
+                </div>
+                
+                <!-- Services -->
+                <div class="footer-section">
+                    <h3>I Nostri Servizi</h3>
+                    <p><a href="servizio-fotovoltaico.html">Impianti Fotovoltaici</a></p>
+                    <p><a href="servizio-infissi.html">Infissi e Serramenti</a></p>
+                    <p><a href="servizio-edilizia.html">Edilizia Residenziale e Industriale</a></p>
+                    <p><a href="servizio-impermeabilizzazioni.html">Impermeabilizzazioni</a></p>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h3>Contatti</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Via Roma 123, Cesena (FC)</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+390547123456">+39 0547 123456</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@denca.it">info@denca.it</a></p>
+                </div>
+                
+                <!-- Working Hours -->
+                <div class="footer-section">
+                    <h3>Orari di Lavoro</h3>
+                    <p><strong>Lun - Ven:</strong> 8:00 - 18:00</p>
+                    <p><strong>Sabato:</strong> 8:00 - 12:00</p>
+                    <p><strong>Domenica:</strong> Chiuso</p>
+                    <p style="color: #e74c3c; margin-top: 1rem;"><strong>Emergenze 24/7:</strong> <a href="tel:+393331234567" style="color: #e74c3c;">+39 333 1234567</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Denca S.r.l. Tutti i diritti riservati.</p>
+                <p><strong>P.IVA:</strong> 12345678901 | <strong>REA:</strong> FC-123456</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

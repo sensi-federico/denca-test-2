@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti - Denca Costruzioni</title>
+    <meta name="description" content="Contatta Denca per preventivi gratuiti e consulenze. Telefono, email, form contatti e mappa per raggiungerci. Cesena, Forlì-Cesena, Emilia-Romagna.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/contatti.css">
+    <script src="./js/contatti.js"></script>
+    <script src="./js/common.js"></script>
+</head>
+<body>
+    <!-- ==========================================================================
+         HEADER & NAVIGATION
+         ========================================================================== -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">DENCA</a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="servizi.html">Servizi</a></li>
+                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                    <li><a href="progetti.html">Progetti</a></li>
+                    <li><a href="contatti.html" class="active">Contatti</a></li>
+                </ul>
+            </nav>
+            
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         PAGE HEADER
+         ========================================================================== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contattaci</h1>
+            <p>Siamo qui per trasformare le tue idee in realtà. Contattaci per una consulenza gratuita, un preventivo personalizzato o per qualsiasi informazione sui nostri servizi.</p>
+            
+            <div class="quick-contacts">
+                <a href="tel:+390547123456" class="quick-contact">
+                    <i class="fas fa-phone"></i>
+                    <span>0547 123456</span>
+                </a>
+                <a href="mailto:info@denca.it" class="quick-contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@denca.it</span>
+                </a>
+                <a href="tel:+393331234567" class="quick-contact">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>333 1234567</span>
+                </a>
+            </div>
+            
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &gt; Contatti
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT METHODS SECTION
+         ========================================================================== -->
+    <section class="contact-methods-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Come Puoi Contattarci</h2>
+                <p>Scegli il modo più comodo per te. Siamo sempre disponibili e pronti ad aiutarti</p>
+            </div>
+            
+            <div class="contact-grid">
+                <!-- Telefono Ufficio -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="contact-title">Telefono Ufficio</h3>
+                    <p class="contact-info">Chiamaci durante gli orari di ufficio per informazioni, preventivi e assistenza tecnica.</p>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-phone-alt"></i> 0547 123456</li>
+                        <li><i class="fas fa-clock"></i> Lun-Ven 8:00-18:00</li>
+                        <li><i class="fas fa-user-tie"></i> Consulenza diretta</li>
+                    </ul>
+                    <a href="tel:+390547123456" class="contact-action">
+                        <i class="fas fa-phone"></i> Chiama Ora
+                    </a>
+                </div>
+
+                <!-- Cellulare -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="contact-title">Cellulare</h3>
+                    <p class="contact-info">Raggiungici anche via cellulare per urgenze o per essere ricontattati velocemente.</p>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-mobile-alt"></i> 333 1234567</li>
+                        <li><i class="fas fa-clock"></i> Lun-Sab 8:00-20:00</li>
+                        <li><i class="fas fa-comments"></i> WhatsApp disponibile</li>
+                    </ul>
+                    <a href="tel:+393331234567" class="contact-action">
+                        <i class="fas fa-mobile-alt"></i> Chiama Mobile
+                    </a>
+                </div>
+
+                <!-- Email -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-title">Email</h3>
+                    <p class="contact-info">Inviaci una email dettagliata con la tua richiesta. Ti risponderemo entro 24 ore.</p>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-envelope"></i> info@denca.it</li>
+                        <li><i class="fas fa-reply"></i> Risposta in 24h</li>
+                        <li><i class="fas fa-file-pdf"></i> Allegati supportati</li>
+                    </ul>
+                    <a href="mailto:info@denca.it" class="contact-action">
+                        <i class="fas fa-envelope"></i> Invia Email
+                    </a>
+                </div>
+
+                <!-- WhatsApp -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="contact-title">WhatsApp</h3>
+                    <p class="contact-info">Scrivici su WhatsApp per un contatto veloce e diretto. Condividi foto e documenti facilmente.</p>
+                    <ul class="contact-details">
+                        <li><i class="fab fa-whatsapp"></i> 333 1234567</li>
+                        <li><i class="fas fa-clock"></i> Risposta veloce</li>
+                        <li><i class="fas fa-camera"></i> Condividi foto</li>
+                    </ul>
+                    <a href="https://wa.me/393331234567" class="contact-action" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Scrivi su WhatsApp
+                    </a>
+                </div>
+
+                <!-- Ufficio -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="contact-title">Vieni in Ufficio</h3>
+                    <p class="contact-info">Vieni a trovarci nella nostra sede per una consulenza personalizzata e dettagliata.</p>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-map-marker-alt"></i> Via Roma 123, Cesena</li>
+                        <li><i class="fas fa-clock"></i> Su appuntamento</li>
+                        <li><i class="fas fa-handshake"></i> Consulenza gratuita</li>
+                    </ul>
+                    <a href="#mappa" class="contact-action">
+                        <i class="fas fa-map-marker-alt"></i> Vedi Mappa
+                    </a>
+                </div>
+
+                <!-- Emergenze -->
+                <div class="contact-card emergency-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="contact-title">Emergenze 24/7</h3>
+                    <p class="contact-info">Per emergenze urgenti siamo disponibili 24 ore su 24, 7 giorni su 7. Intervento rapido garantito.</p>
+                    <ul class="contact-details">
+                        <li><i class="fas fa-phone"></i> 333 1234567</li>
+                        <li><i class="fas fa-clock"></i> 24/7 disponibile</li>
+                        <li><i class="fas fa-tools"></i> Intervento rapido</li>
+                    </ul>
+                    <a href="tel:+393331234567" class="contact-action">
+                        <i class="fas fa-exclamation-triangle"></i> Chiama per Emergenza
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT FORM SECTION
+         ========================================================================== -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Richiedi un Preventivo Gratuito</h2>
+                <p>Compila il form per ricevere un preventivo personalizzato e gratuito per il tuo progetto</p>
+            </div>
+            
+            <div class="form-container">
+                <div class="form-intro">
+                    <h3>Parla con i Nostri Esperti</h3>
+                    <p>
+                        Il nostro team di professionisti è pronto ad aiutarti a realizzare il tuo progetto. 
+                        Compila il form con le tue esigenze e riceverai un preventivo dettagliato e personalizzato 
+                        entro 24 ore.
+                    </p>
+                    
+                    <ul class="form-benefits">
+                        <li><i class="fas fa-check"></i> Preventivo completamente gratuito</li>
+                        <li><i class="fas fa-check"></i> Consulenza tecnica specializzata</li>
+                        <li><i class="fas fa-check"></i> Sopralluogo senza impegno</li>
+                        <li><i class="fas fa-check"></i> Soluzioni personalizzate</li>
+                        <li><i class="fas fa-check"></i> Risposta garantita in 24h</li>
+                        <li><i class="fas fa-check"></i> Prezzi trasparenti e competitivi</li>
+                    </ul>
+                    
+                    <div class="response-time">
+                        <h4><i class="fas fa-clock"></i> Tempo di Risposta</h4>
+                        <p>Ti ricontatteremo entro 24 ore dalla ricezione della tua richiesta, dal lunedì al venerdì.</p>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i> Grazie! La tua richiesta è stata inviata con successo. Ti ricontatteremo entro 24 ore.
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">Nome *</label>
+                            <input type="text" id="nome" name="nome" required>
+                            <div class="error-message">Il nome è obbligatorio</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cognome">Cognome *</label>
+                            <input type="text" id="cognome" name="cognome" required>
+                            <div class="error-message">Il cognome è obbligatorio</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message">Inserisci un'email valida</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Telefono *</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                            <div class="error-message">Il telefono è obbligatorio</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="servizio">Servizio di Interesse *</label>
+                            <select id="servizio" name="servizio" required>
+                                <option value="">Seleziona un servizio</option>
+                                <option value="fotovoltaico">Impianti Fotovoltaici</option>
+                                <option value="infissi">Infissi e Serramenti</option>
+                                <option value="edilizia">Edilizia Residenziale e Industriale</option>
+                                <option value="impermeabilizzazioni">Impermeabilizzazioni</option>
+                                <option value="manutenzioni">Manutenzioni</option>
+                                <option value="consulenza">Consulenza Tecnica</option>
+                                <option value="altro">Altro</option>
+                            </select>
+                            <div class="error-message">Seleziona un servizio</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="urgenza">Urgenza del Progetto</label>
+                            <select id="urgenza" name="urgenza">
+                                <option value="">Seleziona tempistica</option>
+                                <option value="entro-1-mese">Entro 1 mese</option>
+                                <option value="entro-3-mesi">Entro 3 mesi</option>
+                                <option value="entro-6-mesi">Entro 6 mesi</option>
+                                <option value="oltre-6-mesi">Oltre 6 mesi</option>
+                                <option value="solo-informazioni">Solo informazioni</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="citta">Città del Progetto</label>
+                        <input type="text" id="citta" name="citta" placeholder="es. Cesena, Forlì, Rimini...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="messaggio">Descrivi il Tuo Progetto *</label>
+                        <textarea id="messaggio" name="messaggio" placeholder="Descrivi dettagliatamente quello che hai in mente: tipo di intervento, dimensioni, particolari esigenze, budget orientativo..." required></textarea>
+                        <div class="error-message">La descrizione del progetto è obbligatoria</div>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="privacy" name="privacy" required>
+                        <label for="privacy">
+                            Accetto il trattamento dei miei dati personali secondo la 
+                            <a href="privacy-policy.html" target="_blank">Privacy Policy</a> 
+                            e autorizzo l'invio di comunicazioni commerciali. *
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">
+                            Desidero ricevere la newsletter con aggiornamenti su servizi, promozioni e novità del settore.
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="submit-text">
+                            <i class="fas fa-paper-plane"></i> Invia Richiesta Gratuita
+                        </span>
+                        <span class="loading">
+                            <i class="fas fa-spinner"></i> Invio in corso...
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         MAP SECTION
+         ========================================================================== -->
+    <section class="map-section" id="mappa">
+        <div class="container">
+            <div class="section-title">
+                <h2>Dove Siamo</h2>
+                <p>Vieni a trovarci nella nostra sede per una consulenza personalizzata</p>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-info">
+                    <h3>La Nostra Sede</h3>
+                    <p>
+                        La sede di Denca si trova nel cuore di Cesena, facilmente raggiungibile 
+                        sia in auto che con i mezzi pubblici. Disponiamo di parcheggio dedicato 
+                        per i clienti e di un ufficio moderno dove accogliere le vostre esigenze.
+                    </p>
+                    
+                    <div class="location-details">
+                        <div class="location-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Indirizzo:</strong><br>
+                                Via Roma 123, 47521 Cesena (FC)<br>
+                                Emilia-Romagna, Italia
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <i class="fas fa-car"></i>
+                            <div>
+                                <strong>Parcheggio:</strong><br>
+                                Posti auto dedicati disponibili
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <i class="fas fa-bus"></i>
+                            <div>
+                                <strong>Mezzi Pubblici:</strong><br>
+                                Fermata autobus a 200m
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Visite:</strong><br>
+                                Su appuntamento (consigliato)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://maps.google.com/?q=Via+Roma+123+Cesena" target="_blank" class="directions-btn">
+                        <i class="fas fa-route"></i> Ottieni Indicazioni
+                    </a>
+                </div>
+                
+                <div class="map-frame-container">
+                    <!-- Placeholder per Google Maps -->
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p><strong>Google Maps</strong><br>
+                        Via Roma 123, Cesena (FC)<br>
+                        <em>Mappa interattiva da integrare</em></p>
+                    </div>
+                    
+                    <!-- Versione reale Google Maps (da sostituire con embed reale) -->
+                    <!--
+                    <iframe 
+                        class="map-frame"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.123456789!2d12.123456!3d44.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDA3JzI0LjQiTiAxMsKwMDcnMjQuNCJF!5e0!3m2!1sit!2sit!4v1234567890123!5m2!1sit!2sit"
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                    -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         OFFICE HOURS SECTION
+         ========================================================================== -->
+    <section class="office-hours-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Orari e Disponibilità</h2>
+                <p>Quando puoi trovarci e come raggiungerci nei diversi momenti della giornata</p>
+            </div>
+            
+            <div class="hours-container">
+                <!-- Orari Ufficio -->
+                <div class="hours-card">
+                    <div class="hours-icon">
+                        <i class="fas fa-business-time"></i>
+                    </div>
+                    <h3 class="hours-title">Orari Ufficio</h3>
+                    <ul class="hours-list">
+                        <li>
+                            <span class="day">Lunedì - Venerdì</span>
+                            <span class="time">8:00 - 18:00</span>
+                        </li>
+                        <li>
+                            <span class="day">Sabato</span>
+                            <span class="time">8:00 - 12:00</span>
+                        </li>
+                        <li>
+                            <span class="day">Domenica</span>
+                            <span class="time closed">Chiuso</span>
+                        </li>
+                    </ul>
+                    <div class="hours-note">
+                        Personale in ufficio per consulenze, preventivi e assistenza tecnica.
+                    </div>
+                </div>
+
+                <!-- Disponibilità Telefonica -->
+                <div class="hours-card">
+                    <div class="hours-icon">
+                        <i class="fas fa-phone-volume"></i>
+                    </div>
+                    <h3 class="hours-title">Disponibilità Telefonica</h3>
+                    <ul class="hours-list">
+                        <li>
+                            <span class="day">Lunedì - Venerdì</span>
+                            <span class="time">7:30 - 19:00</span>
+                        </li>
+                        <li>
+                            <span class="day">Sabato</span>
+                            <span class="time">8:00 - 20:00</span>
+                        </li>
+                        <li>
+                            <span class="day">Domenica</span>
+                            <span class="time">Solo emergenze</span>
+                        </li>
+                    </ul>
+                    <div class="hours-note">
+                        Rispondiamo sempre alle chiamate durante gli orari indicati.
+                    </div>
+                </div>
+
+                <!-- Servizio Emergenze -->
+                <div class="hours-card">
+                    <div class="hours-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="hours-title">Servizio Emergenze</h3>
+                    <ul class="hours-list">
+                        <li>
+                            <span class="day">Tutti i giorni</span>
+                            <span class="time emergency">24 ore su 24</span>
+                        </li>
+                        <li>
+                            <span class="day">Festivi inclusi</span>
+                            <span class="time emergency">Sempre attivo</span>
+                        </li>
+                        <li>
+                            <span class="day">Intervento</span>
+                            <span class="time emergency">Entro 2 ore</span>
+                        </li>
+                    </ul>
+                    <div class="hours-note">
+                        Per infiltrazioni, problemi elettrici e altre emergenze urgenti.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CTA SECTION
+         ========================================================================== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Non Aspettare, Contattaci Subito!</h2>
+                <p>
+                    Il nostro team è pronto ad aiutarti. Che sia per un preventivo, una consulenza 
+                    o un'emergenza, siamo sempre a tua disposizione con professionalità e rapidità.
+                </p>
+                <div class="cta-buttons">
+                    <a href="tel:+390547123456" class="cta-button cta-primary">
+                        <i class="fas fa-phone"></i> Chiama Ora: 0547 123456
+                    </a>
+                    <a href="#contactForm" class="cta-button cta-secondary">
+                        <i class="fas fa-edit"></i> Compila il Form
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <h3>DENCA</h3>
+                    <p>Costruzioni e ristrutturazioni di qualità dal 2003. Specializzati in impianti fotovoltaici, infissi, edilizia e impermeabilizzazioni.</p>
+                    <p><strong>La tua soddisfazione è la nostra priorità.</strong></p>
+                </div>
+                
+                <!-- Services -->
+                <div class="footer-section">
+                    <h3>I Nostri Servizi</h3>
+                    <p><a href="servizio-fotovoltaico.html">Impianti Fotovoltaici</a></p>
+                    <p><a href="servizio-infissi.html">Infissi e Serramenti</a></p>
+                    <p><a href="servizio-edilizia.html">Edilizia Residenziale e Industriale</a></p>
+                    <p><a href="servizio-impermeabilizzazioni.html">Impermeabilizzazioni</a></p>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h3>Contatti</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Via Roma 123, Cesena (FC)</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+390547123456">+39 0547 123456</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@denca.it">info@denca.it</a></p>
+                </div>
+                
+                <!-- Working Hours -->
+                <div class="footer-section">
+                    <h3>Orari di Lavoro</h3>
+                    <p><strong>Lun - Ven:</strong> 8:00 - 18:00</p>
+                    <p><strong>Sabato:</strong> 8:00 - 12:00</p>
+                    <p><strong>Domenica:</strong> Chiuso</p>
+                    <p style="color: #e74c3c; margin-top: 1rem;"><strong>Emergenze 24/7:</strong> <a href="tel:+393331234567" style="color: #e74c3c;">+39 333 1234567</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Denca S.r.l. Tutti i diritti riservati.</p>
+                <p><strong>P.IVA:</strong> 12345678901 | <strong>REA:</strong> FC-123456</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
