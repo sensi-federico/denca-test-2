@@ -638,35 +638,35 @@ document.addEventListener('DOMContentLoaded', function() {
     // FLOATING ACTION BUTTON
     // ==========================================================================
     
-    function initializeFloatingActions() {
-        // Create floating action button for quick contact
-        const fab = document.createElement('div');
-        fab.className = 'floating-action-button';
-        fab.innerHTML = `
-            <button class="fab-main" onclick="toggleFabMenu()">
-                <i class="fas fa-plus"></i>
-            </button>
-            <div class="fab-menu">
-                <button class="fab-item" onclick="quickContact('phone')" title="Chiama">
-                    <i class="fas fa-phone"></i>
-                </button>
-                <button class="fab-item" onclick="quickContact('whatsapp')" title="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </button>
-                <button class="fab-item" onclick="quickContact('email')" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </button>
-                <button class="fab-item" onclick="quickContact('quote')" title="Preventivo">
-                    <i class="fas fa-calculator"></i>
-                </button>
-            </div>
-        `;
+    // function initializeFloatingActions() {
+    //     // Create floating action button for quick contact
+    //     const fab = document.createElement('div');
+    //     fab.className = 'floating-action-button';
+    //     fab.innerHTML = `
+    //         <button class="fab-main" onclick="toggleFabMenu()">
+    //             <i class="fas fa-plus"></i>
+    //         </button>
+    //         <div class="fab-menu">
+    //             <button class="fab-item" onclick="quickContact('phone')" title="Chiama">
+    //                 <i class="fas fa-phone"></i>
+    //             </button>
+    //             <button class="fab-item" onclick="quickContact('whatsapp')" title="WhatsApp">
+    //                 <i class="fab fa-whatsapp"></i>
+    //             </button>
+    //             <button class="fab-item" onclick="quickContact('email')" title="Email">
+    //                 <i class="fas fa-envelope"></i>
+    //             </button>
+    //             <button class="fab-item" onclick="quickContact('quote')" title="Preventivo">
+    //                 <i class="fas fa-calculator"></i>
+    //             </button>
+    //         </div>
+    //     `;
         
-        document.body.appendChild(fab);
-        addFloatingActionStyles();
+    //     document.body.appendChild(fab);
+    //     addFloatingActionStyles();
         
-        console.log('🎯 Floating action button initialized');
-    }
+    //     console.log('🎯 Floating action button initialized');
+    // }
     
     window.toggleFabMenu = function() {
         const fab = document.querySelector('.floating-action-button');
@@ -1105,7 +1105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeServiceCards();
         initializeProcessSteps();
         initializeServiceComparison();
-        initializeFloatingActions();
+        // initializeFloatingActions();
         
         // Analytics and tracking
         trackServicePageEngagement();

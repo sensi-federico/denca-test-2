@@ -586,3 +586,7 @@ if (typeof module !== 'undefined' && module.exports) {
         collectFormData
     };
 }
+
+   if (window.DencaLinkUtils) {
+       window.DencaLinkUtils.prefillContactForm();
+   }

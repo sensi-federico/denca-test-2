@@ -1,0 +1,1133 @@
+/* ==========================================================================
+   DENCA - GLOBAL VARIABLES & BASE SYSTEM
+   File da includere prima di tutti gli altri CSS
+   ========================================================================== */
+
+/* ==========================================================================
+   CSS CUSTOM PROPERTIES (VARIABILI GLOBALI)
+   ========================================================================== */
+
+:root {
+    /* === PALETTE COLORI === */
+    --primary-color: #d4902b;
+    --primary-light: #e0a247;
+    --primary-dark: #c8841f;
+    --secondary-color: #2c3e50;
+    --secondary-light: #34495e;
+    --secondary-dark: #1a252f;
+    
+    /* === COLORI TESTO === */
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --text-muted: #95a5a6;
+    --text-white: #ffffff;
+    
+    /* === COLORI BACKGROUND === */
+    --bg-white: #ffffff;
+    --bg-light: #f8f9fa;
+    --bg-lighter: #e9ecef;
+    --bg-dark: #1a252f;
+    
+    /* === COLORI SISTEMA === */
+    --success-color: #27ae60;
+    --error-color: #e74c3c;
+    --warning-color: #f39c12;
+    --info-color: #3498db;
+    
+    /* === OMBRE (SHADOWS) === */
+    --shadow-xs: 0 2px 8px rgba(0,0,0,0.04);
+    --shadow-sm: 0 5px 15px rgba(0,0,0,0.08);
+    --shadow-md: 0 10px 30px rgba(0,0,0,0.1);
+    --shadow-lg: 0 15px 40px rgba(0,0,0,0.12);
+    --shadow-xl: 0 20px 50px rgba(0,0,0,0.15);
+    --shadow-2xl: 0 25px 60px rgba(0,0,0,0.18);
+    --shadow-card-hover: 0 25px 50px rgba(0,0,0,0.15);
+    
+    /* === OMBRE COLORATE === */
+    --shadow-primary: 0 5px 15px rgba(212, 144, 43, 0.3);
+    --shadow-primary-hover: 0 8px 25px rgba(212, 144, 43, 0.4);
+    --shadow-secondary: 0 5px 15px rgba(44, 62, 80, 0.3);
+    --shadow-secondary-hover: 0 8px 25px rgba(44, 62, 80, 0.4);
+    
+    /* === TRANSIZIONI === */
+    --transition-fast: all 0.2s ease;
+    --transition-normal: all 0.3s ease;
+    --transition-slow: all 0.5s ease;
+    --transition-bounce: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-elastic: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* === SPAZIATURE === */
+    --spacing-xs: 0.5rem;    /* 8px */
+    --spacing-sm: 1rem;      /* 16px */
+    --spacing-md: 1.5rem;    /* 24px */
+    --spacing-lg: 2rem;      /* 32px */
+    --spacing-xl: 2.5rem;    /* 40px */
+    --spacing-2xl: 3rem;     /* 48px */
+    --spacing-3xl: 4rem;     /* 64px */
+    --spacing-4xl: 5rem;     /* 80px */
+    --spacing-5xl: 6rem;     /* 96px */
+    
+    /* === TYPOGRAPHY === */
+    --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-family-heading: var(--font-family-base);
+    
+    --font-size-xs: 0.75rem;   /* 12px */
+    --font-size-sm: 0.875rem;  /* 14px */
+    --font-size-base: 1rem;    /* 16px */
+    --font-size-lg: 1.125rem;  /* 18px */
+    --font-size-xl: 1.25rem;   /* 20px */
+    --font-size-2xl: 1.5rem;   /* 24px */
+    --font-size-3xl: 1.875rem; /* 30px */
+    --font-size-4xl: 2.25rem;  /* 36px */
+    --font-size-5xl: 3rem;     /* 48px */
+    --font-size-6xl: 3.75rem;  /* 60px */
+    
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.6;
+    --line-height-loose: 1.8;
+    
+    /* === BORDER RADIUS === */
+    --radius-none: 0;
+    --radius-sm: 0.375rem;   /* 6px */
+    --radius-md: 0.5rem;     /* 8px */
+    --radius-lg: 0.75rem;    /* 12px */
+    --radius-xl: 1rem;       /* 16px */
+    --radius-2xl: 1.25rem;   /* 20px */
+    --radius-3xl: 1.5rem;    /* 24px */
+    --radius-full: 9999px;
+    
+    /* === CARDS SYSTEM === */
+    --card-padding: var(--spacing-lg);
+    --card-padding-sm: var(--spacing-md);
+    --card-padding-lg: var(--spacing-xl);
+    --card-border-radius: var(--radius-2xl);
+    --card-shadow: var(--shadow-md);
+    --card-shadow-hover: var(--shadow-card-hover);
+    --card-hover-transform: translateY(-10px);
+    --card-grid-gap: var(--spacing-lg);
+    --card-min-width: 320px;
+    
+    /* === BUTTONS === */
+    --btn-padding-y: var(--spacing-sm);
+    --btn-padding-x: var(--spacing-lg);
+    --btn-padding-sm-y: var(--spacing-xs);
+    --btn-padding-sm-x: var(--spacing-md);
+    --btn-padding-lg-y: var(--spacing-md);
+    --btn-padding-lg-x: var(--spacing-xl);
+    --btn-border-radius: var(--radius-full);
+    --btn-font-weight: var(--font-weight-semibold);
+    --btn-hover-transform: translateY(-3px);
+    
+    /* === FORM ELEMENTS === */
+    --input-padding: var(--spacing-sm) var(--spacing-md);
+    --input-border-radius: var(--radius-lg);
+    --input-border-color: #e9ecef;
+    --input-border-color-focus: var(--primary-color);
+    --input-shadow-focus: 0 0 0 3px rgba(212, 144, 43, 0.1);
+    
+    /* === NAVBAR === */
+    --navbar-height: 80px;
+    --navbar-padding: var(--spacing-sm) 0;
+    --navbar-shadow: var(--shadow-md);
+    
+    /* === CONTAINER === */
+    --container-max-width: 1200px;
+    --container-padding: 0 var(--spacing-lg);
+    
+    /* === BREAKPOINTS (per reference, non usabili direttamente) === */
+    --breakpoint-xs: 480px;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --breakpoint-2xl: 1400px;
+}
+
+/* ==========================================================================
+   SISTEMA BASE COMPONENTI
+   ========================================================================== */
+
+/* === RESET GLOBALE === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+}
+
+/* === CONTAINER SYSTEM === */
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: var(--container-padding);
+    position: relative;
+    z-index: 2;
+}
+
+/* === CARDS SYSTEM === */
+.card-base {
+    background: var(--bg-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--card-shadow);
+    transition: var(--transition-bounce);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-base::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: scaleX(0);
+    transition: var(--transition-normal);
+}
+
+.card-base:hover {
+    transform: var(--card-hover-transform);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.card-base:hover::before {
+    transform: scaleX(1);
+}
+
+/* Card con padding ridotto */
+.card-base--sm {
+    padding: var(--card-padding-sm);
+}
+
+/* Card con padding maggiorato */
+.card-base--lg {
+    padding: var(--card-padding-lg);
+}
+
+/* === GRID SYSTEMS === */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-min-width), 1fr));
+    gap: var(--card-grid-gap);
+}
+
+/* Grid con cards più larghe */
+.cards-grid--large {
+    --card-min-width: 400px;
+}
+
+/* Grid con cards più strette */
+.cards-grid--small {
+    --card-min-width: 280px;
+}
+
+/* Grid compatta */
+.cards-grid--compact {
+    --card-grid-gap: var(--spacing-md);
+}
+
+/* === BUTTONS SYSTEM === */
+.btn-base {
+    display: inline-block;
+    padding: var(--btn-padding-y) var(--btn-padding-x);
+    border: none;
+    border-radius: var(--btn-border-radius);
+    font-weight: var(--btn-font-weight);
+    font-size: var(--font-size-base);
+    font-family: inherit;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition-bounce);
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--text-white);
+    box-shadow: var(--shadow-primary);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: var(--btn-hover-transform);
+    box-shadow: var(--shadow-primary-hover);
+    text-decoration: none;
+    color: var(--text-white);
+}
+
+.btn-secondary {
+    background: var(--secondary-color);
+    color: var(--text-white);
+    box-shadow: var(--shadow-secondary);
+}
+
+.btn-secondary:hover {
+    background: var(--secondary-light);
+    transform: var(--btn-hover-transform);
+    box-shadow: var(--shadow-secondary-hover);
+    text-decoration: none;
+    color: var(--text-white);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: var(--text-white);
+    transform: var(--btn-hover-transform);
+    text-decoration: none;
+}
+
+/* Button sizes */
+.btn-sm {
+    padding: var(--btn-padding-sm-y) var(--btn-padding-sm-x);
+    font-size: var(--font-size-sm);
+}
+
+.btn-lg {
+    padding: var(--btn-padding-lg-y) var(--btn-padding-lg-x);
+    font-size: var(--font-size-lg);
+}
+
+/* === SECTION TITLES === */
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-4xl);
+}
+
+.section-title h2 {
+    font-size: clamp(var(--font-size-4xl), 4vw, var(--font-size-5xl));
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+    font-weight: var(--font-weight-bold);
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: var(--radius-sm);
+}
+
+.section-title p {
+    font-size: var(--font-size-xl);
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: var(--line-height-relaxed);
+}
+
+/* Section title allineato a sinistra */
+.section-title--left {
+    text-align: left;
+}
+
+.section-title--left h2::after {
+    left: 0;
+    transform: none;
+}
+
+/* === FORM ELEMENTS === */
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--secondary-color);
+    font-size: var(--font-size-sm);
+}
+
+.form-control {
+    width: 100%;
+    padding: var(--input-padding);
+    border: 2px solid var(--input-border-color);
+    border-radius: var(--input-border-radius);
+    font-size: var(--font-size-base);
+    font-family: inherit;
+    transition: var(--transition-normal);
+    outline: none;
+    background-color: var(--bg-white);
+}
+
+.form-control:focus {
+    border-color: var(--input-border-color-focus);
+    box-shadow: var(--input-shadow-focus);
+}
+
+.form-control::placeholder {
+    color: var(--text-muted);
+}
+
+/* === UTILITY CLASSES === */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: var(--primary-color); }
+.text-secondary { color: var(--secondary-color); }
+.text-light { color: var(--text-light); }
+.text-muted { color: var(--text-muted); }
+.text-white { color: var(--text-white); }
+
+.bg-primary { background-color: var(--primary-color); }
+.bg-secondary { background-color: var(--secondary-color); }
+.bg-light { background-color: var(--bg-light); }
+.bg-white { background-color: var(--bg-white); }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--spacing-xs); }
+.mt-2 { margin-top: var(--spacing-sm); }
+.mt-3 { margin-top: var(--spacing-md); }
+.mt-4 { margin-top: var(--spacing-lg); }
+.mt-5 { margin-top: var(--spacing-xl); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--spacing-xs); }
+.mb-2 { margin-bottom: var(--spacing-sm); }
+.mb-3 { margin-bottom: var(--spacing-md); }
+.mb-4 { margin-bottom: var(--spacing-lg); }
+.mb-5 { margin-bottom: var(--spacing-xl); }
+
+.hidden { display: none; }
+.invisible { visibility: hidden; }
+
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Animation utility classes */
+.animate-fade-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-left {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-right {
+    animation: slideInRight 0.6s ease-out;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* === RESPONSIVE ADJUSTMENTS === */
+@media (max-width: 768px) {
+    :root {
+        --container-padding: 0 var(--spacing-sm);
+        --card-padding: var(--spacing-md);
+        --card-grid-gap: var(--spacing-md);
+        --card-min-width: 100%;
+        --btn-padding-x: var(--spacing-md);
+        font-size: 14px; /* Riduce leggermente la base per mobile */
+    }
+    
+    .section-title {
+        margin-bottom: var(--spacing-2xl);
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --container-padding: 0 var(--spacing-sm);
+        --card-padding: var(--spacing-sm);
+        --card-grid-gap: var(--spacing-sm);
+    }
+}
+
+/* ==========================================================================
+   FLOATING ACTION BUTTON - CSS GLOBALE
+   Da aggiungere al file global-variables.css
+   ========================================================================== */
+
+/* ==========================================================================
+   FLOATING ACTION BUTTON
+   ========================================================================== */
+
+.floating-action-button {
+    position: fixed;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    z-index: 1000;
+    font-family: inherit;
+}
+
+.fab-main {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    color: var(--text-white);
+    font-size: var(--font-size-2xl);
+    cursor: pointer;
+    box-shadow: var(--shadow-primary);
+    transition: var(--transition-bounce);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.fab-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: var(--transition-normal);
+}
+
+.fab-main:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-primary-hover);
+}
+
+.fab-main:hover::before {
+    opacity: 1;
+}
+
+.fab-main:active {
+    transform: scale(0.95);
+}
+
+/* Menu Items */
+.fab-menu {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-bounce);
+    pointer-events: none;
+}
+
+.floating-action-button.active .fab-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.fab-item {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-full);
+    background: var(--bg-white);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    cursor: pointer;
+    font-size: var(--font-size-lg);
+    transition: var(--transition-bounce);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transform: translateX(100px);
+}
+
+.floating-action-button.active .fab-item {
+    transform: translateX(0);
+}
+
+.floating-action-button.active .fab-item:nth-child(1) { transition-delay: 0.1s; }
+.floating-action-button.active .fab-item:nth-child(2) { transition-delay: 0.15s; }
+.floating-action-button.active .fab-item:nth-child(3) { transition-delay: 0.2s; }
+.floating-action-button.active .fab-item:nth-child(4) { transition-delay: 0.25s; }
+
+.fab-item:hover {
+    background: var(--primary-color);
+    color: var(--text-white);
+    transform: scale(1.1);
+    box-shadow: var(--shadow-primary);
+}
+
+.fab-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--primary-color);
+    transform: scale(0);
+    border-radius: var(--radius-full);
+    transition: var(--transition-normal);
+    z-index: -1;
+}
+
+.fab-item:hover::before {
+    transform: scale(1);
+}
+
+/* Tooltips */
+.fab-item::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-dark);
+    color: var(--text-white);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-normal);
+    pointer-events: none;
+    font-weight: var(--font-weight-medium);
+}
+
+.fab-item:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(-5px);
+}
+
+/* Pulse animation for main button */
+.fab-main.pulse {
+    animation: fab-pulse 2s infinite;
+}
+
+@keyframes fab-pulse {
+    0%, 100% { 
+        box-shadow: var(--shadow-primary), 0 0 0 0 rgba(212, 144, 43, 0.4);
+    }
+    50% { 
+        box-shadow: var(--shadow-primary), 0 0 0 10px rgba(212, 144, 43, 0);
+    }
+}
+
+/* Close state rotation */
+.floating-action-button.active .fab-main {
+    transform: rotate(45deg);
+}
+
+.floating-action-button.active .fab-main:hover {
+    transform: rotate(45deg) scale(1.1);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .floating-action-button {
+        bottom: var(--spacing-md);
+        right: var(--spacing-md);
+    }
+    
+    .fab-main {
+        width: 55px;
+        height: 55px;
+        font-size: var(--font-size-xl);
+    }
+    
+    .fab-item {
+        width: 45px;
+        height: 45px;
+        font-size: var(--font-size-base);
+    }
+    
+    .fab-item::after {
+        right: 55px;
+        font-size: var(--font-size-xs);
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-action-button {
+        bottom: var(--spacing-sm);
+        right: var(--spacing-sm);
+    }
+    
+    .fab-main {
+        width: 50px;
+        height: 50px;
+        font-size: var(--font-size-lg);
+    }
+    
+    .fab-item {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-sm);
+        margin-bottom: var(--spacing-xs);
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .fab-main,
+    .fab-item {
+        transition: none;
+    }
+    
+    .fab-main.pulse {
+        animation: none;
+    }
+}
+
+/* Print - Hide FAB */
+@media print {
+    .floating-action-button {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   FLOATING ACTION BUTTON - CSS CORRETTO E STANDARDIZZATO
+   Da SOSTITUIRE completamente nel global-variables.css
+   ========================================================================== */
+
+/* ==========================================================================
+   FLOATING ACTION BUTTON - VERSIONE CORRETTA
+   ========================================================================== */
+
+.floating-action-button {
+    position: fixed;
+    bottom: var(--spacing-lg);
+    right: var(--spacing-lg);
+    z-index: 1000;
+    font-family: inherit;
+    transition: var(--transition-normal);
+}
+
+.fab-main {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    color: var(--text-white);
+    font-size: var(--font-size-2xl);
+    cursor: pointer;
+    box-shadow: var(--shadow-primary);
+    transition: var(--transition-bounce);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.fab-main::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: var(--transition-normal);
+}
+
+.fab-main:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-primary-hover);
+}
+
+.fab-main:hover::before {
+    opacity: 1;
+}
+
+.fab-main:active {
+    transform: scale(0.95);
+}
+
+/* Menu Container */
+.fab-menu {
+    position: absolute;
+    bottom: 75px; /* Posizionato sopra il bottone principale */
+    right: 5px; /* Centrato rispetto al bottone principale */
+    opacity: 1;
+    visibility: visible;
+    transition: none; /* Rimuoviamo la transizione del container */
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column-reverse; /* I bottoni appaiono dal basso verso l'alto */
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+/* Menu Items - TUTTI IDENTICI */
+.uniform-fab-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-full);
+    background: var(--bg-white);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: var(--font-size-lg);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    
+    /* Stato iniziale - nascosto sotto il bottone principale */
+    transform: translateY(70px) scale(0.8);
+    opacity: 0;
+}
+
+/* Rimozione di qualsiasi override di stile */
+.uniform-fab-item,
+.uniform-fab-item:nth-child(1),
+.uniform-fab-item:nth-child(2),
+.uniform-fab-item:nth-child(3),
+.uniform-fab-item:nth-child(4) {
+    /* STILI IDENTICI per tutti i bottoni */
+    background: var(--bg-white) !important;
+    color: var(--primary-color) !important;
+    border: 2px solid var(--primary-color) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+/* Hover state identico per tutti */
+.uniform-fab-item:hover {
+    background: var(--primary-color) !important;
+    color: var(--text-white) !important;
+    transform: scale(1.1) !important;
+    box-shadow: var(--shadow-primary) !important;
+    text-decoration: none;
+}
+
+/* Effetto di riempimento al hover */
+.uniform-fab-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--primary-color);
+    transform: scale(0);
+    border-radius: var(--radius-full);
+    transition: var(--transition-normal);
+    z-index: -1;
+}
+
+.uniform-fab-item:hover::before {
+    transform: scale(1);
+}
+
+/* Tooltips - IDENTICI per tutti */
+.uniform-fab-item::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-dark);
+    color: var(--text-white);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-normal);
+    pointer-events: none;
+    font-weight: var(--font-weight-medium);
+    z-index: 1001;
+    box-shadow: var(--shadow-md);
+}
+
+.uniform-fab-item:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(-5px);
+}
+
+/* Animazione pulse per il bottone principale */
+.fab-main.pulse {
+    animation: fab-pulse 2s infinite;
+}
+
+@keyframes fab-pulse {
+    0%, 100% { 
+        box-shadow: var(--shadow-primary), 0 0 0 0 rgba(212, 144, 43, 0.4);
+    }
+    50% { 
+        box-shadow: var(--shadow-primary), 0 0 0 10px rgba(212, 144, 43, 0);
+    }
+}
+
+/* Rotazione del bottone principale quando attivo */
+.floating-action-button.active .fab-main {
+    transform: rotate(45deg);
+}
+
+.floating-action-button.active .fab-main:hover {
+    transform: rotate(45deg) scale(1.1);
+}
+
+/* Stile per il bottone emergenza (fuori orario) */
+.emergency-fab-item {
+    background: var(--error-color) !important;
+    color: var(--text-white) !important;
+    border-color: var(--error-color) !important;
+    animation: pulse 2s infinite;
+}
+
+.emergency-fab-item:hover {
+    background: #c0392b !important;
+    color: var(--text-white) !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .floating-action-button {
+        bottom: var(--spacing-md);
+        right: var(--spacing-md);
+    }
+    
+    .fab-main {
+        width: 55px;
+        height: 55px;
+        font-size: var(--font-size-xl);
+    }
+    
+    .fab-menu {
+        bottom: 70px;
+        right: 2px;
+    }
+    
+    .uniform-fab-item {
+        width: 45px;
+        height: 45px;
+        font-size: var(--font-size-base);
+    }
+    
+    .uniform-fab-item::after {
+        right: 55px;
+        font-size: var(--font-size-xs);
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-action-button {
+        bottom: var(--spacing-sm);
+        right: var(--spacing-sm);
+    }
+    
+    .fab-main {
+        width: 50px;
+        height: 50px;
+        font-size: var(--font-size-lg);
+    }
+    
+    .fab-menu {
+        bottom: 65px;
+        right: 0;
+    }
+    
+    .uniform-fab-item {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-sm);
+    }
+    
+    .uniform-fab-item::after {
+        right: 50px;
+        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem;
+    }
+}
+
+/* ==========================================================================
+   ACCESSIBILITÀ E STATI SPECIALI
+   ========================================================================== */
+
+/* Focus states */
+.fab-main:focus,
+.uniform-fab-item:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Alto contrasto */
+@media (prefers-contrast: high) {
+    .fab-main,
+    .uniform-fab-item {
+        border: 2px solid currentColor;
+    }
+    
+    .uniform-fab-item::after {
+        border: 1px solid var(--text-white);
+    }
+}
+
+/* Movimento ridotto */
+@media (prefers-reduced-motion: reduce) {
+    .fab-main,
+    .uniform-fab-item,
+    .fab-menu {
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    .fab-main.pulse {
+        animation: none;
+    }
+    
+    .uniform-fab-item {
+        transform: none !important;
+    }
+}
+
+/* Stampa - nascondi FAB */
+@media print {
+    .floating-action-button {
+        display: none !important;
+    }
+}
+
+/* Supporto dark mode */
+@media (prefers-color-scheme: dark) {
+    .uniform-fab-item {
+        background: var(--bg-dark);
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+    
+    .uniform-fab-item:hover {
+        background: var(--primary-color) !important;
+        color: var(--bg-dark) !important;
+    }
+    
+    .uniform-fab-item::after {
+        background: var(--bg-white);
+        color: var(--text-dark);
+    }
+}
+
+/* ==========================================================================
+   OVERRIDE FINALI - Assicura uniformità totale
+   ========================================================================== */
+
+/* Forza stili identici su tutti i bottoni FAB */
+.fab-item,
+.fab-item:first-child,
+.fab-item:last-child,
+.fab-item:nth-child(odd),
+.fab-item:nth-child(even),
+.uniform-fab-item:first-child,
+.uniform-fab-item:last-child,
+.uniform-fab-item:nth-child(1),
+.uniform-fab-item:nth-child(2),
+.uniform-fab-item:nth-child(3),
+.uniform-fab-item:nth-child(4) {
+    background: var(--bg-white) !important;
+    color: var(--primary-color) !important;
+    border: 2px solid var(--primary-color) !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: var(--radius-full) !important;
+    box-shadow: var(--shadow-md) !important;
+    font-size: var(--font-size-lg) !important;
+}
+
+/* Hover identico per tutti */
+.fab-item:hover,
+.uniform-fab-item:hover {
+    background: var(--primary-color) !important;
+    color: var(--text-white) !important;
+    box-shadow: var(--shadow-primary) !important;
+    text-decoration: none !important;
+}
