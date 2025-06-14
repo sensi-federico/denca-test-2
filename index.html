@@ -6,835 +6,11 @@
     <title>Denca - Costruzioni e Ristrutturazioni</title>
     <meta name="description" content="Denca: specialisti in impianti fotovoltaici, infissi, edilizia residenziale e industriale, impermeabilizzazioni. Oltre 20 anni di esperienza in Emilia-Romagna.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        /* ==========================================================================
-           VARIABILI CSS GLOBALI
-           ========================================================================== */
-        :root {
-            /* Colors */
-            --primary-color: #d4902b;
-            --secondary-color: #34495e;
-            --accent-color: #e67e22;
-            --text-dark: #2c3e50;
-            --text-light: #7f8c8d;
-            --text-white: #ffffff;
-            --bg-white: #ffffff;
-            --bg-light: #f8f9fa;
-            --bg-dark: #2c3e50;
-            --border-color: #e9ecef;
-            --success-color: #27ae60;
-            --warning-color: #f39c12;
-            --error-color: #e74c3c;
-            
-            /* Spacing */
-            --spacing-xs: 0.25rem;
-            --spacing-sm: 0.5rem;
-            --spacing-md: 1rem;
-            --spacing-lg: 1.5rem;
-            --spacing-xl: 2rem;
-            --spacing-2xl: 3rem;
-            --spacing-3xl: 4rem;
-            
-            /* Typography */
-            --font-family-base: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            --font-size-xs: 0.75rem;
-            --font-size-sm: 0.875rem;
-            --font-size-base: 1rem;
-            --font-size-lg: 1.125rem;
-            --font-size-xl: 1.25rem;
-            --font-size-2xl: 1.5rem;
-            --font-size-3xl: 1.875rem;
-            --font-size-4xl: 2.25rem;
-            --font-size-5xl: 3rem;
-            --font-size-6xl: 3.75rem;
-            --font-weight-normal: 400;
-            --font-weight-medium: 500;
-            --font-weight-semibold: 600;
-            --font-weight-bold: 700;
-            --line-height-tight: 1.25;
-            --line-height-normal: 1.5;
-            --line-height-relaxed: 1.75;
-            
-            /* Layout */
-            --container-max-width: 1200px;
-            --container-padding: 0 var(--spacing-lg);
-            --navbar-height: 80px;
-            --navbar-padding: var(--spacing-md) 0;
-            --navbar-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            
-            /* Border radius */
-            --radius-sm: 0.25rem;
-            --radius-md: 0.5rem;
-            --radius-lg: 0.75rem;
-            --radius-xl: 1rem;
-            --radius-2xl: 1.5rem;
-            --radius-full: 9999px;
-            
-            /* Shadows */
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.1);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
-            --shadow-xl: 0 20px 25px rgba(0,0,0,0.1);
-            --shadow-primary: 0 10px 25px rgba(212, 144, 43, 0.3);
-            --shadow-primary-hover: 0 15px 35px rgba(212, 144, 43, 0.4);
-            --shadow-secondary: 0 10px 25px rgba(52, 73, 94, 0.3);
-            --shadow-secondary-hover: 0 15px 35px rgba(52, 73, 94, 0.4);
-            
-            /* Transitions */
-            --transition-fast: 0.15s ease-in-out;
-            --transition-normal: 0.3s ease-in-out;
-            --transition-slow: 0.5s ease-in-out;
-            --transition-bounce: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            
-            /* Grid & Cards */
-            --card-padding: var(--spacing-xl);
-            --card-border-radius: var(--radius-xl);
-            --card-shadow: var(--shadow-md);
-            --card-grid-gap: var(--spacing-xl);
-            --card-min-width: 300px;
-            
-            /* Buttons */
-            --btn-padding-x: var(--spacing-xl);
-            --btn-padding-y: var(--spacing-md);
-            --btn-border-radius: var(--radius-full);
-            --btn-font-weight: var(--font-weight-semibold);
-            --btn-transition: var(--transition-bounce);
-        }
-
-        /* ==========================================================================
-           BASE STYLES
-           ========================================================================== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-family-base);
-            line-height: var(--line-height-normal);
-            color: var(--text-dark);
-            background: var(--bg-white);
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: var(--container-max-width);
-            margin: 0 auto;
-            padding: var(--container-padding);
-        }
-
-        /* ==========================================================================
-           HEADER & NAVIGATION
-           ========================================================================== */
-        .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            padding: var(--navbar-padding);
-            box-shadow: var(--navbar-shadow);
-            transition: var(--transition-normal);
-            height: var(--navbar-height);
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-container {
-            max-width: var(--container-max-width);
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: var(--container-padding);
-            width: 100%;
-        }
-
-        .logo {
-            font-size: var(--font-size-4xl);
-            font-weight: var(--font-weight-bold);
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: var(--transition-bounce);
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-            color: var(--primary-color);
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: var(--spacing-lg);
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: var(--font-weight-medium);
-            transition: var(--transition-normal);
-            position: relative;
-            padding: var(--spacing-xs) 0;
-        }
-
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            color: var(--primary-color);
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background: var(--primary-color);
-            transition: var(--transition-normal);
-        }
-
-        .nav-menu a:hover::after,
-        .nav-menu a.active::after {
-            width: 100%;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 4px;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--secondary-color);
-            transition: var(--transition-normal);
-        }
-
-        /* ==========================================================================
-           HERO SECTION
-           ========================================================================== */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, rgba(212, 144, 43, 0.9) 0%, rgba(52, 73, 94, 0.9) 100%), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            background-size: cover, 50px 50px;
-            background-position: center, center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="100" cy="200" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="300" cy="400" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="700" cy="100" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="900" cy="600" r="2.5" fill="rgba(255,255,255,0.1)"/><circle cx="500" cy="800" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: var(--spacing-lg);
-            z-index: 2;
-            position: relative;
-        }
-
-        .hero-content h1 {
-            font-size: var(--font-size-6xl);
-            font-weight: var(--font-weight-bold);
-            color: var(--text-white);
-            margin-bottom: var(--spacing-lg);
-            line-height: var(--line-height-tight);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: slideInUp 1s ease-out;
-        }
-
-        .hero-subtitle {
-            font-size: var(--font-size-xl);
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: var(--spacing-2xl);
-            line-height: var(--line-height-relaxed);
-            animation: slideInUp 1s ease-out 0.2s both;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: var(--spacing-lg);
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: slideInUp 1s ease-out 0.4s both;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--spacing-sm);
-            padding: var(--btn-padding-y) var(--btn-padding-x);
-            border-radius: var(--btn-border-radius);
-            font-weight: var(--btn-font-weight);
-            text-decoration: none;
-            transition: var(--btn-transition);
-            cursor: pointer;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary {
-            background: var(--primary-color);
-            color: var(--text-white);
-            box-shadow: var(--shadow-primary);
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-color);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-primary-hover);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-white);
-            border-color: var(--text-white);
-        }
-
-        .btn-secondary:hover {
-            background: var(--text-white);
-            color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ==========================================================================
-           SEZIONI PRINCIPALI
-           ========================================================================== */
-        section {
-            padding: var(--spacing-3xl) 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: var(--spacing-3xl);
-        }
-
-        .section-title h2 {
-            font-size: var(--font-size-5xl);
-            font-weight: var(--font-weight-bold);
-            color: var(--text-dark);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .section-title p {
-            font-size: var(--font-size-lg);
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* ==========================================================================
-           SERVIZI GRID
-           ========================================================================== */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(var(--card-min-width), 1fr));
-            gap: var(--card-grid-gap);
-            margin-top: var(--spacing-2xl);
-        }
-
-        .service-card {
-            background: var(--bg-white);
-            padding: var(--card-padding);
-            border-radius: var(--card-border-radius);
-            box-shadow: var(--card-shadow);
-            text-align: center;
-            transition: var(--transition-normal);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-            transform: scaleX(0);
-            transition: var(--transition-normal);
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            border-radius: var(--radius-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto var(--spacing-lg);
-            font-size: var(--font-size-2xl);
-            color: var(--text-white);
-            box-shadow: var(--shadow-primary);
-            transition: var(--transition-bounce);
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.1);
-        }
-
-        .service-card h3 {
-            font-size: var(--font-size-2xl);
-            font-weight: var(--font-weight-bold);
-            color: var(--text-dark);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .service-card p {
-            color: var(--text-light);
-            line-height: var(--line-height-relaxed);
-            margin-bottom: var(--spacing-lg);
-        }
-
-        /* ==========================================================================
-           STATS SECTION
-           ========================================================================== */
-        .stats-section {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--text-white);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--spacing-xl);
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: var(--font-size-5xl);
-            font-weight: var(--font-weight-bold);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .stat-item p {
-            font-size: var(--font-size-lg);
-            opacity: 0.9;
-        }
-
-        /* ==========================================================================
-           CTA SECTION
-           ========================================================================== */
-        .cta-section {
-            background: var(--bg-light);
-            text-align: center;
-        }
-
-        .cta-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .cta-content h2 {
-            font-size: var(--font-size-4xl);
-            font-weight: var(--font-weight-bold);
-            color: var(--text-dark);
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .cta-content p {
-            font-size: var(--font-size-lg);
-            color: var(--text-light);
-            margin-bottom: var(--spacing-2xl);
-        }
-
-        /* ==========================================================================
-           FOOTER
-           ========================================================================== */
-        .footer {
-            background: var(--bg-dark);
-            color: var(--text-white);
-            padding: var(--spacing-3xl) 0 var(--spacing-xl);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-xl);
-            margin-bottom: var(--spacing-2xl);
-        }
-
-        .footer-section h3 {
-            color: var(--text-white);
-            margin-bottom: var(--spacing-lg);
-            font-size: var(--font-size-xl);
-        }
-
-        .footer-section p, .footer-section a {
-            color: #ccc;
-            text-decoration: none;
-            line-height: var(--line-height-relaxed);
-            transition: var(--transition-normal);
-        }
-
-        .footer-section a:hover {
-            color: var(--primary-color);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: var(--spacing-sm);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .contact-item i {
-            color: var(--primary-color);
-            width: 20px;
-            margin-top: 2px;
-        }
-
-        .newsletter {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-xl);
-            text-align: center;
-        }
-
-        .newsletter h3 {
-            color: var(--text-white);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .newsletter p {
-            color: rgba(255,255,255,0.9);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: var(--spacing-xs);
-            max-width: 300px;
-            margin: 0 auto;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: var(--spacing-sm);
-            border: none;
-            border-radius: var(--radius-full);
-            outline: none;
-        }
-
-        .newsletter-form button {
-            background: var(--text-white);
-            color: var(--primary-color);
-            border: none;
-            padding: var(--spacing-sm);
-            border-radius: var(--radius-full);
-            cursor: pointer;
-            transition: var(--transition-normal);
-        }
-
-        .newsletter-form button:hover {
-            transform: scale(1.05);
-        }
-
-        .certifications {
-            display: flex;
-            gap: var(--spacing-sm);
-            margin-top: var(--spacing-sm);
-            flex-wrap: wrap;
-        }
-
-        .cert-badge {
-            background: var(--primary-color);
-            color: var(--text-white);
-            padding: var(--spacing-xs) var(--spacing-sm);
-            border-radius: var(--radius-xl);
-            font-size: var(--font-size-xs);
-            font-weight: var(--font-weight-semibold);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: var(--spacing-lg);
-            border-top: 1px solid #333;
-            color: #888;
-        }
-
-        .footer-bottom p {
-            margin-bottom: var(--spacing-xs);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-sm);
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: #888;
-            text-decoration: none;
-            font-size: var(--font-size-sm);
-            transition: var(--transition-normal);
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* ==========================================================================
-           FLOATING ACTION BUTTON (SOLO QUESTO RIMANE)
-           ========================================================================== */
-        .floating-action-button {
-            position: fixed;
-            bottom: var(--spacing-lg);
-            right: var(--spacing-lg);
-            z-index: 1000;
-            font-family: inherit;
-        }
-
-        .fab-main {
-            width: 60px;
-            height: 60px;
-            border-radius: var(--radius-full);
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border: none;
-            color: var(--text-white);
-            font-size: var(--font-size-2xl);
-            cursor: pointer;
-            box-shadow: var(--shadow-primary);
-            transition: var(--transition-bounce);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .fab-main::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
-            opacity: 0;
-            transition: var(--transition-normal);
-        }
-
-        .fab-main:hover {
-            transform: scale(1.1);
-            box-shadow: var(--shadow-primary-hover);
-        }
-
-        .fab-main:hover::before {
-            opacity: 1;
-        }
-
-        .fab-main:active {
-            transform: scale(0.95);
-        }
-
-        .fab-menu {
-            position: absolute;
-            bottom: 70px;
-            right: 0;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition-bounce);
-            pointer-events: none;
-        }
-
-        .floating-action-button.active .fab-menu {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-        }
-
-        .fab-item {
-            display: block;
-            width: 50px;
-            height: 50px;
-            border-radius: var(--radius-full);
-            background: var(--bg-white);
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            margin-bottom: var(--spacing-sm);
-            cursor: pointer;
-            font-size: var(--font-size-lg);
-            transition: var(--transition-bounce);
-            box-shadow: var(--shadow-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-            transform: translateX(100px);
-        }
-
-        .floating-action-button.active .fab-item {
-            transform: translateX(0);
-        }
-
-        .floating-action-button.active .fab-item:nth-child(1) { transition-delay: 0.1s; }
-        .floating-action-button.active .fab-item:nth-child(2) { transition-delay: 0.15s; }
-        .floating-action-button.active .fab-item:nth-child(3) { transition-delay: 0.2s; }
-        .floating-action-button.active .fab-item:nth-child(4) { transition-delay: 0.25s; }
-
-        .fab-item:hover {
-            background: var(--primary-color);
-            color: var(--text-white);
-            transform: scale(1.1);
-            box-shadow: var(--shadow-primary);
-        }
-
-        .fab-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--primary-color);
-            transform: scale(0);
-            border-radius: var(--radius-full);
-            transition: var(--transition-normal);
-            z-index: -1;
-        }
-
-        .fab-item:hover::before {
-            transform: scale(1);
-        }
-
-        .floating-action-button.active .fab-main {
-            transform: rotate(45deg);
-        }
-
-        .floating-action-button.active .fab-main:hover {
-            transform: rotate(45deg) scale(1.1);
-        }
-
-        /* ==========================================================================
-           RESPONSIVE DESIGN
-           ========================================================================== */
-        @media (max-width: 768px) {
-            :root {
-                --container-padding: 0 var(--spacing-sm);
-                --card-padding: var(--spacing-md);
-                --card-grid-gap: var(--spacing-md);
-                --card-min-width: 100%;
-                --btn-padding-x: var(--spacing-md);
-                font-size: 14px;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--bg-white);
-                flex-direction: column;
-                box-shadow: var(--shadow-lg);
-                padding: var(--spacing-lg);
-                gap: var(--spacing-md);
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .hero-content h1 {
-                font-size: var(--font-size-4xl);
-            }
-
-            .hero-subtitle {
-                font-size: var(--font-size-lg);
-            }
-
-            .hero-cta {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--spacing-lg);
-            }
-
-            .floating-action-button {
-                bottom: var(--spacing-md);
-                right: var(--spacing-md);
-            }
-
-            .fab-main {
-                width: 50px;
-                height: 50px;
-                font-size: var(--font-size-xl);
-            }
-
-            .fab-item {
-                width: 45px;
-                height: 45px;
-                font-size: var(--font-size-base);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./css/global-variables.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="js/links-fix.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/index.js"></script>
 </head>
 <body>
     <!-- ==========================================================================
@@ -845,7 +21,7 @@
             <a href="index.html" class="logo">DENCA</a>
             
             <nav>
-                <ul class="nav-menu" id="navMenu">
+                <ul class="nav-menu">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="servizi.html">Servizi</a></li>
                     <li><a href="chi-siamo.html">Chi Siamo</a></li>
@@ -874,106 +50,253 @@
                 edilizia residenziale e industriale e impermeabilizzazioni 
                 con professionalità e innovazione.
             </p>
-            <div class="hero-cta">
-                <a href="servizi.html" class="btn btn-primary">
-                    <i class="fas fa-tools"></i>
-                    I Nostri Servizi
+            
+            <div class="cta-buttons">
+                <a href="contatti.html" class="cta-button cta-primary">
+                    <i class="fas fa-phone"></i> Richiedi Preventivo
                 </a>
-                <a href="contatti.html" class="btn btn-secondary">
-                    <i class="fas fa-phone"></i>
-                    Contattaci Ora
+                <a href="progetti.html" class="cta-button cta-secondary">
+                    <i class="fas fa-eye"></i> Vedi Progetti
                 </a>
             </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down fa-2x"></i>
         </div>
     </section>
 
     <!-- ==========================================================================
-         SERVIZI PRINCIPALI
+         SERVICES SECTION
          ========================================================================== -->
-    <section class="services-section">
+    <section class="services-section" id="servizi">
         <div class="container">
             <div class="section-title">
                 <h2>I Nostri Servizi</h2>
-                <p>Soluzioni complete per ogni esigenza edile e tecnologica</p>
+                <p>Soluzioni complete e specializzate per ogni esigenza di costruzione, ristrutturazione ed efficienza energetica</p>
             </div>
             
             <div class="services-grid">
+                <!-- Impianti Fotovoltaici -->
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-solar-panel"></i>
                     </div>
                     <h3>Impianti Fotovoltaici</h3>
-                    <p>Progettazione e installazione di sistemi fotovoltaici per abitazioni e aziende. Soluzioni personalizzate per l'efficienza energetica.</p>
-                    <a href="servizi.html#fotovoltaico" class="btn btn-primary">Scopri di più</a>
+                    <p>Progettiamo e installiamo impianti fotovoltaici di alta qualità per abitazioni e aziende. Energia pulita, risparmio garantito e incentivi fiscali.</p>
+                    <a href="servizi.html#fotovoltaico" class="service-link">
+                        Scopri di più <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
                 
+                <!-- Infissi -->
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-door-open"></i>
+                        <i class="fas fa-window-maximize"></i>
                     </div>
-                    <h3>Infissi e Serramenti</h3>
-                    <p>Infissi in PVC, alluminio e legno. Persiane, portoncini blindati e soluzioni per il risparmio energetico.</p>
-                    <a href="servizi.html#infissi" class="btn btn-primary">Scopri di più</a>
+                    <h3>Infissi</h3>
+                    <p>Serramenti di qualità in PVC, alluminio e legno. Miglioriamo l'efficienza energetica e il comfort della tua casa con prodotti certificati.</p>
+                    <a href="servizi.html#infissi" class="service-link">
+                        Scopri di più <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
                 
+                <!-- Edilizia -->
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-hard-hat"></i>
+                        <i class="fas fa-building"></i>
                     </div>
-                    <h3>Edilizia</h3>
-                    <p>Costruzioni residenziali e industriali, ristrutturazioni complete e parziali con materiali di prima qualità.</p>
-                    <a href="servizi.html#edilizia" class="btn btn-primary">Scopri di più</a>
+                    <h3>Edilizia Residenziale e Industriale</h3>
+                    <p>Nuove costruzioni e ristrutturazioni complete per il settore residenziale e industriale. Dalla progettazione alla realizzazione finale.</p>
+                    <a href="servizi.html#edilizia" class="service-link">
+                        Scopri di più <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
                 
+                <!-- Impermeabilizzazioni -->
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-tint"></i>
+                        <i class="fas fa-tint-slash"></i>
                     </div>
                     <h3>Impermeabilizzazioni</h3>
-                    <p>Impermeabilizzazioni di terrazzi, balconi, tetti e coperture industriali con garanzie a lungo termine.</p>
-                    <a href="servizi.html#impermeabilizzazioni" class="btn btn-primary">Scopri di più</a>
+                    <p>Soluzioni professionali per impermeabilizzazioni di terrazze, balconi, coperture e fondazioni. Materiali di prima qualità e garanzie estese.</p>
+                    <a href="servizi.html#impermeabilizzazioni" class="service-link">
+                        Scopri di più <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ==========================================================================
-         STATISTICHE
+         FEATURED PROJECT SECTION
          ========================================================================== -->
-    <section class="stats-section">
+    <section class="featured-project-section">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>20+</h3>
-                    <p>Anni di Esperienza</p>
+            <div class="featured-project-content">
+                <div class="featured-text">
+                    <div class="featured-badge">Progetto in Evidenza</div>
+                    <h2>Impianto Fotovoltaico Centro Commerciale</h2>
+                    <div class="featured-specs">
+                        <span class="spec-item"><strong>200 kW</strong> di potenza</span>
+                        <span class="spec-item"><strong>500</strong> pannelli installati</span>
+                        <span class="spec-item"><strong>280.000 kWh</strong> produzione annua</span>
+                    </div>
+                    <p>
+                        Installazione su copertura centro commerciale con sistema di monitoraggio avanzato 
+                        e ottimizzatori per ogni singolo pannello.
+                    </p>
+                    <ul class="featured-highlights">
+                        <li><i class="fas fa-check"></i> 500 pannelli ad alta efficienza</li>
+                        <li><i class="fas fa-check"></i> Produzione annua: 280.000 kWh</li>
+                        <li><i class="fas fa-check"></i> Risparmio CO2: 140 tonnellate/anno</li>
+                        <li><i class="fas fa-check"></i> ROI: 6 anni con incentivi</li>
+                        <li><i class="fas fa-check"></i> Monitoraggio real-time</li>
+                        <li><i class="fas fa-check"></i> Garanzia estesa 25 anni</li>
+                    </ul>
+                    <a href="progetti.html" class="featured-cta">
+                        <i class="fas fa-play"></i> Guarda il Case Study
+                    </a>
                 </div>
-                <div class="stat-item">
-                    <h3>500+</h3>
-                    <p>Progetti Completati</p>
-                </div>
-                <div class="stat-item">
-                    <h3>100%</h3>
-                    <p>Clienti Soddisfatti</p>
-                </div>
-                <div class="stat-item">
-                    <h3>24/7</h3>
-                    <p>Assistenza Emergenze</p>
+                
+                <div class="featured-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-store"></i>
+                        <p><strong>Centro Commerciale</strong><br>
+                        Impianto 200kW<br>
+                        <em>Foto progetto da inserire</em></p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ==========================================================================
-         CALL TO ACTION
+         WHY CHOOSE US SECTION
          ========================================================================== -->
-    <section class="cta-section">
+    <section class="why-us-section" id="chi-siamo">
         <div class="container">
-            <div class="cta-content">
-                <h2>Inizia il Tuo Progetto Oggi</h2>
-                <p>Contattaci per una consulenza gratuita e scopri come possiamo realizzare i tuoi progetti con qualità e professionalità.</p>
-                <a href="contatti.html" class="btn btn-primary">
-                    <i class="fas fa-calendar-alt"></i>
-                    Prenota Consulenza Gratuita
+            <div class="section-title">
+                <h2>Perché Scegliere Denca</h2>
+                <p>La nostra forza risiede nella qualità, affidabilità e innovazione</p>
+            </div>
+            
+            <div class="why-us-content">
+                <div class="why-us-text">
+                    <p>
+                        Da oltre 20 anni siamo un punto di riferimento nel settore delle costruzioni e dell'efficienza energetica. 
+                        La nostra forza risiede nella qualità, affidabilità e innovazione.
+                    </p>
+                    
+                    <ul class="why-us-list">
+                        <li><i class="fas fa-check-circle"></i> Oltre 20 anni di esperienza nel settore</li>
+                        <li><i class="fas fa-users"></i> Team di professionisti qualificati e certificati</li>
+                        <li><i class="fas fa-clock"></i> Rispetto garantito dei tempi di consegna</li>
+                        <li><i class="fas fa-euro-sign"></i> Preventivi trasparenti e prezzi competitivi</li>
+                        <li><i class="fas fa-award"></i> Garanzia estesa su tutti i lavori eseguiti</li>
+                        <li><i class="fas fa-headset"></i> Assistenza post-vendita dedicata h24</li>
+                    </ul>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Progetti Completati</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Anni di Esperienza</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Clienti Soddisfatti</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Assistenza Clienti</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         TESTIMONIALS SECTION
+         ========================================================================== -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cosa Dicono i Nostri Clienti</h2>
+                <p>Le testimonianze di chi ha scelto Denca per i propri progetti</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Professionali, puntuali e competenti. Il nostro impianto fotovoltaico produce 
+                        esattamente quello che avevano previsto. Consiglio Denca a occhi chiusi!"
+                    </p>
+                    <div class="testimonial-author">Marco Bianchi</div>
+                    <div class="testimonial-project">Impianto Fotovoltaico 6kW - Cesena</div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Ristrutturazione completa della nostra casa anni '70. Ora abbiamo una casa 
+                        in classe A e risparmiamo il 70% sui costi di riscaldamento. Eccezionali!"
+                    </p>
+                    <div class="testimonial-author">Famiglia Rossi</div>
+                    <div class="testimonial-project">Ristrutturazione Completa - Bertinoro</div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Avevo problemi di infiltrazioni da anni. Denca ha risolto tutto con 
+                        l'impermeabilizzazione. Garanzia 10 anni e nessun problema da 2 anni!"
+                    </p>
+                    <div class="testimonial-author">Condominio Miramare</div>
+                    <div class="testimonial-project">Impermeabilizzazione Terrazzo - Rimini</div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CTA FINAL SECTION
+         ========================================================================== -->
+    <section class="cta-final-section" id="contatti">
+        <div class="container">
+            <div class="cta-final-content">
+                <h2>Hai un Progetto in Mente?</h2>
+                <p>
+                    Raccontaci la tua idea e trasformiamola insieme in realtà. 
+                    Consulenza gratuita e preventivo personalizzato senza impegno.
+                    I nostri esperti sono pronti ad ascoltare le tue esigenze e trovare la soluzione perfetta.
+                </p>
+                <a href="contatti.html" class="cta-button">
+                    <i class="fas fa-phone"></i> Contattaci Ora
                 </a>
             </div>
         </div>
@@ -985,26 +308,42 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <!-- Informazioni Azienda -->
+                <!-- Company Info -->
                 <div class="footer-section">
-                    <h3>DENCA S.r.l.</h3>
-                    <p>Da oltre 20 anni al servizio dell'edilizia in Emilia-Romagna. Specializzati in impianti fotovoltaici, infissi, edilizia e impermeabilizzazioni.</p>
-                    
-                    <div class="certifications">
-                        <span class="cert-badge">ISO 9001</span>
-                        <span class="cert-badge">SOA</span>
-                        <span class="cert-badge">Certificato FER</span>
+                    <div class="company-info">
+                        <h3>DENCA</h3>
+                        <p>Costruzioni e ristrutturazioni di qualità dal 2003. Specializzati in impianti fotovoltaici, infissi, edilizia e impermeabilizzazioni.</p>
+                        <p><strong>La tua soddisfazione è la nostra priorità.</strong></p>
+                        <div class="certifications">
+                            <span class="cert-badge">ISO 9001</span>
+                            <span class="cert-badge">SOA</span>
+                            <span class="cert-badge">F-GAS</span>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Contatti -->
+                <!-- Services -->
+                <div class="footer-section">
+                    <h3>I Nostri Servizi</h3>
+                    <ul>
+                        <li><a href="servizi.html#fotovoltaico"><i class="fas fa-solar-panel"></i> Impianti Fotovoltaici</a></li>
+                        <li><a href="servizi.html#infissi"><i class="fas fa-window-maximize"></i> Infissi e Serramenti</a></li>
+                        <li><a href="servizi.html#edilizia"><i class="fas fa-building"></i> Edilizia Residenziale e Industriale</a></li>
+                        <li><a href="servizi.html#impermeabilizzazioni"><i class="fas fa-tint-slash"></i> Impermeabilizzazioni</a></li>
+                        <li><a href="servizi.html"><i class="fas fa-tools"></i> Manutenzioni</a></li>
+                        <li><a href="servizi.html"><i class="fas fa-handshake"></i> Consulenze Tecniche</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
                 <div class="footer-section">
                     <h3>Contatti</h3>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <strong>Sede Operativa</strong><br>
-                            Via Roma 123, 47121 Forlì (FC)
+                            Via Roma 123<br>47521 Cesena (FC)<br>
+                            Emilia-Romagna, Italia
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1023,46 +362,17 @@
                     </div>
                 </div>
                 
-                <!-- Servizi -->
+                <!-- Working Hours -->
                 <div class="footer-section">
-                    <h3>Servizi</h3>
-                    <p><a href="servizi.html#fotovoltaico">Impianti Fotovoltaici</a></p>
-                    <p><a href="servizi.html#infissi">Infissi e Serramenti</a></p>
-                    <p><a href="servizi.html#edilizia">Edilizia Residenziale</a></p>
-                    <p><a href="servizi.html#impermeabilizzazioni">Impermeabilizzazioni</a></p>
-                    <p><a href="servizi.html#industriale">Edilizia Industriale</a></p>
-                    <p><a href="servizi.html#manutenzione">Manutenzioni</a></p>
-                </div>
-                
-                <!-- Newsletter e Orari -->
-                <div class="footer-section">
-                    <div class="newsletter">
-                        <h3>Newsletter</h3>
-                        <p>Ricevi aggiornamenti sui nostri servizi e promozioni speciali</p>
-                        <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
-                            <input type="email" placeholder="La tua email" required>
-                            <button type="submit">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
-                    </div>
-                    
-                    <div style="margin-top: 2rem;">
-                        <h3>Orari di Lavoro</h3>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <strong>Lun - Ven:</strong> 8:00 - 18:00<br>
-                                <strong>Sabato:</strong> 8:00 - 12:00<br>
-                                <strong>Domenica:</strong> Chiuso
-                            </div>
-                        </div>
-                        <div class="contact-item" style="margin-top: 1rem; color: #e74c3c;">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <div>
-                                <strong>Emergenze 24/7</strong><br>
-                                <a href="tel:+393331234567" style="color: #e74c3c;">+39 333 1234567</a>
-                            </div>
+                    <h3>Orari di Lavoro</h3>
+                    <p><strong>Lunedì - Venerdì:</strong> 8:00 - 18:00</p>
+                    <p><strong>Sabato:</strong> 8:00 - 12:00</p>
+                    <p><strong>Domenica:</strong> Chiuso</p>
+                    <div class="contact-item" style="margin-top: 1rem; color: #e74c3c;">
+                        <i class="fas fa-phone" style="color: #e74c3c;"></i>
+                        <div>
+                            <strong style="color: #e74c3c;">Emergenze 24/7:</strong><br>
+                            <a href="tel:+393331234567" style="color: #e74c3c;">+39 333 1234567</a>
                         </div>
                     </div>
                 </div>
@@ -1070,137 +380,9 @@
             
             <div class="footer-bottom">
                 <p>&copy; 2025 Denca S.r.l. Tutti i diritti riservati.</p>
-                <p><strong>P.IVA:</strong> 12345678901 | <strong>REA:</strong> FC-123456 | <strong>Capitale Sociale:</strong> €50.000,00 i.v.</p>
-                
-                <div class="footer-links">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#cookie">Cookie Policy</a>
-                    <a href="#termini">Termini e Condizioni</a>
-                    <a href="#sitemap">Mappa del Sito</a>
-                </div>
+                <p><strong>P.IVA:</strong> 12345678901 | <strong>REA:</strong> FC-123456</p>
             </div>
         </div>
     </footer>
-
-    <!-- ==========================================================================
-         FLOATING ACTION BUTTON (SOLO QUESTO - NESSUN BACK-TO-TOP)
-         ========================================================================== -->
-    <div class="floating-action-button" id="floatingActionButton">
-        <button class="fab-main" onclick="toggleFabMenu()">
-            <i class="fas fa-plus"></i>
-        </button>
-        <div class="fab-menu">
-            <a href="tel:+390547123456" class="fab-item" title="Chiama Ora">
-                <i class="fas fa-phone"></i>
-            </a>
-            <a href="https://wa.me/393331234567" class="fab-item" title="WhatsApp" target="_blank">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="mailto:info@denca.it" class="fab-item" title="Email">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <a href="contatti.html#contactForm" class="fab-item" title="Preventivo">
-                <i class="fas fa-calculator"></i>
-            </a>
-        </div>
-    </div>
-
-    <!-- ==========================================================================
-         JAVASCRIPT
-         ========================================================================== -->
-    <script>
-        // Mobile menu toggle
-        function toggleMenu() {
-            const navMenu = document.getElementById('navMenu');
-            const hamburger = document.querySelector('.hamburger');
-            
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
-
-        // Floating Action Button toggle
-        function toggleFabMenu() {
-            const fab = document.querySelector('.floating-action-button');
-            const fabMain = fab.querySelector('.fab-main');
-            const fabMenu = fab.querySelector('.fab-menu');
-            
-            fab.classList.toggle('active');
-            
-            if (fab.classList.contains('active')) {
-                fabMain.innerHTML = '<i class="fas fa-times"></i>';
-                fabMenu.style.opacity = '1';
-                fabMenu.style.visibility = 'visible';
-            } else {
-                fabMain.innerHTML = '<i class="fas fa-plus"></i>';
-                fabMenu.style.opacity = '0';
-                fabMenu.style.visibility = 'hidden';
-            }
-        }
-
-        // Newsletter subscription
-        function subscribeNewsletter(event) {
-            event.preventDefault();
-            const email = event.target.querySelector('input[type="email"]').value;
-            
-            // Simulazione invio newsletter
-            alert('Grazie per esserti iscritto alla nostra newsletter!');
-            event.target.reset();
-            
-            // Analytics tracking (se presente)
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'newsletter_signup', {
-                    event_category: 'engagement',
-                    event_label: 'footer_newsletter'
-                });
-            }
-        }
-
-        // Smooth scrolling per i link interni
-        document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('a[href^="#"]');
-            
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    
-                    if (targetSection) {
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-
-            // Animation on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // Observe service cards
-            const serviceCards = document.querySelectorAll('.service-card');
-            serviceCards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(card);
-            });
-
-            console.log('🏗️ DENCA Website - Homepage caricata correttamente');
-            console.log('✅ Back-to-top button rimosso con successo');
-        });
-    </script>
 </body>
 </html>
